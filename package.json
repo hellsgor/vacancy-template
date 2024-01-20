@@ -1,0 +1,23 @@
+{
+  "name": "vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "glob": "^8.1.0",
+    "sass": "^1.58.0",
+    "sharp": "^0.32.0",
+    "svgo": "^3.0.2",
+    "vite": "^4.1.0",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-image-optimizer": "^1.1.2"
+  },
+  "dependencies": {
+    "swiper": "^8.4.7"
+  }
+}

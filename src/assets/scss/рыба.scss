@@ -1,0 +1,16 @@
+@import '@/assets/scss/variables/media';
+
+$root: '.';
+
+#{$root} {
+}
+
+@media (max-width: #{$mediaMD}) {
+  #{$root} {
+  }
+}
+
+@media (max-width: #{$mediaSM}) {
+  #{$root} {
+  }
+}
