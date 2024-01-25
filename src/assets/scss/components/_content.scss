@@ -1,8 +1,13 @@
 @import '@/assets/scss/variables/media';
 @import '@/assets/scss/variables/classes';
 @import '@/assets/scss/variables/colors';
+@import '@/assets/scss/variables/content-block-vars';
 
 #{$content} {
+  padding-top: $content-block-padding-top;
+  padding-right: $content-block-padding-right;
+  padding-bottom: $content-block-padding-bottom;
+  padding-left: $content-block-padding-left;
 }
 
 @media (max-width: #{$mediaMD}) {
@@ -12,5 +17,9 @@
 
 @media (max-width: #{$mediaSM}) {
   #{$content} {
+    padding-top: $content-block-padding-top-mobile;
+    padding-right: $content-block-padding-right-mobile;
+    padding-bottom: $content-block-padding-bottom-mobile;
+    padding-left: $content-block-padding-left-mobile;
   }
 }

@@ -1,6 +1,7 @@
 @import '@/assets/scss/variables/media';
 @import '@/assets/scss/variables/classes';
 @import '@/assets/scss/variables/colors';
+@import '@/assets/scss/variables/content-block-vars';
 
 .tmpl-hh-wrapper {
   box-shadow: 1px 1px 15px #000;
@@ -19,9 +20,10 @@
   }
 
   p {
-    margin-top: 0 !important;
 
     &:first-child {
+      margin-top: 0 !important;
+
       b,
       strong {
         margin-top: 0 !important;
@@ -38,13 +40,13 @@
   overflow: hidden;
   font-family: 'Arial', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  color: black;
-  line-height: 1.4;
+  font-weight: $text-font-weight;
+  font-size: $text-font-size;
+  line-height: $text-line-height;
+  color: $text-color;
 
   @media (max-width: #{$mediaSM}) {
-    font-size: 16px;
+    font-size: $text-font-size-mobile;
   }
 
   * {
@@ -62,6 +64,15 @@
   ol,
   ul {
     li {
+
+      &:not(:first-child) {
+        margin-top: $text-indent-top;
+
+        @media (max-width: $mediaSM) {
+          margin-top: $text-indent-top-mobile;
+        }
+      }
+
       p {
         margin: 0 !important;
 
@@ -102,33 +113,48 @@
   }
 
   p {
-    margin-bottom: 18px;
+    margin-top: $text-indent-top;
 
     &:first-child {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+
       b, strong {
+        padding-top: 0 !important;
         margin-top: 0 !important;
       }
     }
 
+    &:last-child {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+
+      b,
+      strong {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
     @media (max-width: #{$mediaSM}) {
-      margin-bottom: 14px;
+      margin-top: $text-indent-top-mobile;
     }
 
     b,
     strong {
       display: inline-block;
       width: 100%;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 1.2;
-      color: $black;
-      padding-top: 32px !important;
-      margin-top: 22px !important;
+      font-weight: $headings-font-weight;
+      font-size: $headings-font-size;
+      line-height: $headings-line-height;
+      color: $headings-color;
+      padding-top: $heading-top-indent;
+      padding-bottom: $heading-bottom-indent;
 
       @media (max-width: #{$mediaSM}) {
-        font-size: 18px;
-        padding-top: 24px !important;
-        margin-top: 14px !important;
+        font-size: $headings-font-size-mobile;
+        padding-top: $heading-top-indent-mobile;
+        padding-bottom: $heading-bottom-indent-mobile;
       }
     }
 
@@ -146,17 +172,6 @@
         background: transparent;
         padding: 0;
       }
-    }
-
-    &:first-child {
-      b,
-      strong {
-        margin-top: 0 !important;
-      }
-    }
-
-    &:last-child {
-      margin-bottom: 0 !important;
     }
   }
 
