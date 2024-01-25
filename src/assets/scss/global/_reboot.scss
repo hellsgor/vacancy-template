@@ -5,7 +5,6 @@
 .tmpl-hh-wrapper {
   box-shadow: 1px 1px 15px #000;
   border-radius: 4px;
-  border: 30px solid black;
   box-sizing: border-box;
 }
 
@@ -108,7 +107,6 @@
     &:first-child {
       b, strong {
         margin-top: 0 !important;
-        border-top: 0 solid $gray;
       }
     }
 
@@ -125,7 +123,6 @@
       line-height: 1.2;
       color: $black;
       padding-top: 32px !important;
-      border-top: 1px solid $gray;
       margin-top: 22px !important;
 
       @media (max-width: #{$mediaSM}) {

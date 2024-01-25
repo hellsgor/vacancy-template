@@ -3,61 +3,14 @@
 @import '@/assets/scss/variables/colors';
 
 #{$content} {
-  margin: 0 50px;
-  border-top: 1px solid $orange;
-  border-bottom: 1px solid $orange;
-  padding-bottom: 22px;
-
-  ul,
-  ol {
-    margin-left: 0;
-    margin-bottom: 10px;
-
-    li {
-      list-style: none;
-      position: relative;
-      padding-left: 37px;
-      color: $dark;
-      line-height: 1.4;
-      font-size: 18px;
-
-      @media (max-width: #{$mediaSM}) {
-        padding-left: 23px;
-        font-size: 16px;
-      }
-
-      &:not(:last-child) {
-        margin-bottom: 8px;
-      }
-
-      &::before {
-        position: absolute;
-        top: 9px;
-        left: 23px;
-        content: '';
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: $orange;
-
-        @media (max-width: #{$mediaSM}) {
-          left: 10px;
-          top: 7px;
-        }
-      }
-    }
-  }
 }
 
 @media (max-width: #{$mediaMD}) {
   #{$content} {
-
   }
 }
 
 @media (max-width: #{$mediaSM}) {
   #{$content} {
-    margin: 0 12px;
-    padding-bottom: 14px;
   }
 }
