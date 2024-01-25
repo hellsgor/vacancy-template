@@ -5,15 +5,8 @@
 .tmpl-hh-wrapper {
   box-shadow: 1px 1px 15px #000;
   border-radius: 4px;
-  border: 30px solid $orange;
+  border: 30px solid black;
   box-sizing: border-box;
-
-  @media (max-width: #{$mediaSM}) {
-    border-top: 20px solid $orange;
-    border-right: 4px solid $orange;
-    border-left: 4px solid $orange;
-    border-bottom: 4px solid $orange;
-  }
 }
 
 .hht-vacancydescription {
@@ -48,7 +41,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  color: $dark;
+  color: black;
   line-height: 1.4;
 
   @media (max-width: #{$mediaSM}) {
@@ -115,7 +108,7 @@
     &:first-child {
       b, strong {
         margin-top: 0 !important;
-        border-top: 0px solid $gray;
+        border-top: 0 solid $gray;
       }
     }
 
@@ -183,5 +176,6 @@
 }
 
 @media (max-width: #{$mediaSM}) {
-  #{$wrapper} {}
+  #{$wrapper} {
+  }
 }

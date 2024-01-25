@@ -2,84 +2,17 @@
 @import '@/assets/scss/variables/classes';
 
 #{$header} {
-  &__wrapper {
-    position: relative;
-    background-color: $gray-bg;
-    overflow: visible;
-    margin-bottom: 23px;
 
-    &::before {
-      content: '';
-      display: block;
-      width: 100%;
-      padding-top: calc(243 / 630 * 100%);
-    }
 
-    img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: auto;
-      width: 100%;
+  @media (max-width: #{$mediaMD}) {
+    #{$header} {
+
     }
   }
 
-  &__ticker {
-    padding: 28px 0;
-    border-top: 1px solid $orange;
+  @media (max-width: #{$mediaSM}) {
+    #{$header} {
 
-    &-wrapper {
-      height: auto;
-      transition-timing-function: linear;
-    }
-
-    &-slide {
-      display: flex;
-      justify-content: center;
-    }
-
-    img {
-      max-width: 100%;
-    }
-  }
-}
-
-@media (max-width: #{$mediaMD}) {
-  #{$header} {
-    &__ticker {
-      img {
-        padding: 0 10px;
-      }
-    }
-  }
-}
-
-@media (max-width: #{$mediaSM}) {
-  #{$header} {
-    &__wrapper {
-      margin-bottom: 21px;
-
-      &::before {
-        padding-top: calc(102 / 284 * 100%);
-      }
-
-      img {
-        bottom: -3px;
-      }
-    }
-
-    &__ticker {
-      padding: 12px 0;
-
-      &-slide {
-        width: 381px;
-      }
-
-      img {
-        width: 381px;
-        height: auto;
-        max-width: none;
-      }
     }
   }
 }
