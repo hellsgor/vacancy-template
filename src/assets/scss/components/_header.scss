@@ -1,16 +1,17 @@
 @import '@/assets/scss/variables/media';
 @import '@/assets/scss/variables/classes';
+@import '@/assets/scss/variables/colors';
 
 #{$header} {
 
+}
 
-  @media (max-width: #{$mediaMD}) {
-    #{$header} {
-    }
+@media (max-width: #{$mediaMD}) {
+  #{$header} {
   }
+}
 
-  @media (max-width: #{$mediaSM}) {
-    #{$header} {
-    }
+@media (max-width: #{$mediaSM}) {
+  #{$header} {
   }
 }
