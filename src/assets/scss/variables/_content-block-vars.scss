@@ -16,6 +16,7 @@ $content-block-padding-right-mobile: 10px;
 $content-block-padding-bottom-mobile: 35px;
 $content-block-padding-left-mobile: 23px;
 
+
 // font properties
 $text-color: $black;
 // desktop
@@ -26,6 +27,7 @@ $text-font-weight: 400;
 // mobile
 $text-indent-top-mobile: 15px;
 $text-font-size-mobile: 14px;
+
 
 // headings
 $headings-color: $black;
@@ -39,3 +41,13 @@ $heading-bottom-indent: 30px;
 $headings-font-size-mobile: 21px;
 $heading-top-indent-mobile: 35px;
 $heading-bottom-indent-mobile: 15px;
+
+
+// lists
+$ol-padding-left: 20px;
+$ul-padding-left: 20px;
+$marker-size: 4px;
+$marker-radius: 50%;
+$marker-top: 8px;
+$marker-left: 3px;
+$number-left: 0;

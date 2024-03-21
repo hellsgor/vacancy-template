@@ -8,6 +8,40 @@
   padding-right: $content-block-padding-right;
   padding-bottom: $content-block-padding-bottom;
   padding-left: $content-block-padding-left;
+  
+  ol,
+  ul {
+    li {
+      position: relative;
+      list-style-type: none;
+    }
+  }
+  
+  ol li {
+    padding-left: $ol-padding-left;
+  }
+  
+  ul li {
+    padding-left: $ul-padding-left;
+  }
+  
+  ul li::before {
+    position: absolute;
+    top: $marker-top;
+    left: $marker-left;
+    display: block;
+    width: $marker-size;
+    height: $marker-size;
+    border-radius: $marker-radius;
+    background-color: $black;
+    content: '';
+  }
+  
+  ol li::before {
+    content: counter(list-item) '.';
+    position: absolute;
+    left: $number-left;
+  }
 }
 
 @media (max-width: #{$mediaMD}) {
