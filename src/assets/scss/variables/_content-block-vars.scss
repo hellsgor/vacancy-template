@@ -1,58 +1,91 @@
 @import '@/assets/scss/variables/colors';
 
-@function getHeadingsIndent($headingIndentAccordingLayout) {
-  @return $headingIndentAccordingLayout - $text-indent-top
+@function getDesktopHeadingsIndent($headingIndentAccordingLayout) {
+  @return $headingIndentAccordingLayout - map-get(map-get($content-text, desktop), indent-top)
 }
 
 @function getMobileHeadingsIndent($headingIndentAccordingLayout) {
-  @return $headingIndentAccordingLayout - $text-indent-top-mobile
+  @return $headingIndentAccordingLayout - map-get(map-get($content-text, mobile), indent-top)
 }
 
-// content-block
-// desktop
-$content-block-padding-top: 70px;
-$content-block-padding-right: 29px;
-$content-block-padding-bottom: 69px;
-$content-block-padding-left: 29px;
-// mobile
-$content-block-padding-top-mobile: 40px;
-$content-block-padding-right-mobile: 10px;
-$content-block-padding-bottom-mobile: 35px;
-$content-block-padding-left-mobile: 23px;
+$content-block-paddings: (
+  desktop: (
+    top: 64px,
+    right: 56px,
+    bottom: 32px,
+    left: 56px,
+  ),
+  mobile: (
+    top: 48px,
+    right: 17px,
+    bottom: 32px,
+    left: 17px,
+  ),
+);
 
+$content-text: (
+  color: $black,
+  desktop: (
+    font-size: 16px,
+    line-height: 1.4,
+    font-weight: 400,
+    indent-top: 16px,
+    indent-left: 0,
+  ),
+  mobile: (
+    font-size: 14px,
+    indent-top: 16px,
+    indent-left: 0,
+  ),
+);
 
-// font properties
-$text-color: $black;
-// desktop
-$text-indent-top: 20px;
-$text-font-size: 18px;
-$text-line-height: 1.3;
-$text-font-weight: 400;
-// mobile
-$text-indent-top-mobile: 15px;
-$text-font-size-mobile: 14px;
+$content-headings: (
+  color: $black,
+  desktop: (
+    font-size: 14px,
+    font-weight: 700,
+    line-height: 22px,
+    indent-top: getDesktopHeadingsIndent(32px), // передать сюда отступ заголовков из макета
+    indent-bottom: 24px,
+    indent-left: 0,
+  ),
+  mobile: (
+    font-size: 14px,
+    indent-top: getMobileHeadingsIndent(32px), // передать сюда отступ заголовков из макета
+    indent-bottom: 24px,
+    indent-left: 0,
+  ),
+);
 
+$content-list: (
+  desktop: (
+    ol-padding-left: 20px,
+    ul-padding-left: 20px,
+  ),
+  mobile: (
+    ol-padding-left: 13px,
+    ul-padding-left: 13px,
+  ),
+  marker: (
+    size: 4px,
+    radius: 50%,
+    color: $black,
+    desktop: (
+      top: 8px,
+      left: 8px,
+    ),
+    mobile: (
+      top: 7px,
+      left: 1px,
+    ),
+  ),
+  number: (
+    desktop: (
+      left: 0,
+    ),
+    mobile: (
+      left: 0,
+    ),
+  ),
+);
 
-// headings
-$headings-color: $black;
-// desktop
-$headings-font-size: 25px;
-$headings-font-weight: 400;
-$headings-line-height: normal;
-$heading-top-indent: getHeadingsIndent(70px); // передать сюда отступ заголовков из макета
-$heading-bottom-indent: 30px;
-// mobile
-$headings-font-size-mobile: 21px;
-$heading-top-indent-mobile: 35px;
-$heading-bottom-indent-mobile: 15px;
-
-$heading-top-indent-mobile: getMobileHeadingsIndent(32px); // передать сюда отступ заголовков из макета
-
-// lists
-$ol-padding-left: 20px;
-$ul-padding-left: 20px;
-$marker-size: 4px;
-$marker-radius: 50%;
-$marker-top: 8px;
-$marker-left: 3px;
-$number-left: 0;

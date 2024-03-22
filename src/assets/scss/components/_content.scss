@@ -4,10 +4,18 @@
 @import '@/assets/scss/variables/content-block-vars';
 
 #{$content} {
-  padding-top: $content-block-padding-top;
-  padding-right: $content-block-padding-right;
-  padding-bottom: $content-block-padding-bottom;
-  padding-left: $content-block-padding-left;
+  padding-top: map-get(map-get($content-block-paddings, desktop), top);
+  padding-right: map-get(map-get($content-block-paddings, desktop), right);
+  padding-bottom: map-get(map-get($content-block-paddings, desktop), bottom);
+  padding-left: map-get(map-get($content-block-paddings, desktop), left);
+  
+  p {
+    padding-left: map-get(map-get($content-text, desktop), indent-left);
+    
+    strong {
+      padding-left: map-get(map-get($content-headings, desktop), indent-left)
+    }
+  }
   
   ol,
   ul {
@@ -18,29 +26,30 @@
   }
   
   ol li {
-    padding-left: $ol-padding-left;
+    padding-left: map-get(map-get($content-list, desktop), ol-padding-left);
+    
+    &::before {
+      position: absolute;
+      left: map-get(map-get(map-get($content-list, number), desktop), left);
+      content: counter(list-item) '.';
+    }
   }
   
   ul li {
-    padding-left: $ul-padding-left;
-  }
-  
-  ul li::before {
-    position: absolute;
-    top: $marker-top;
-    left: $marker-left;
-    display: block;
-    width: $marker-size;
-    height: $marker-size;
-    border-radius: $marker-radius;
-    background-color: $black;
-    content: '';
-  }
-  
-  ol li::before {
-    content: counter(list-item) '.';
-    position: absolute;
-    left: $number-left;
+    padding-left: map-get(map-get($content-list, desktop), ul-padding-left);
+    
+    &::before {
+      position: absolute;
+      top: map-get(map-get(map-get($content-list, marker), desktop), top);
+      left: map-get(map-get(map-get($content-list, marker), desktop), left);
+      display: block;
+      width: map-get(map-get($content-list, marker), size);
+      height: map-get(map-get($content-list, marker), size);
+      border-radius: map-get(map-get($content-list, marker), radius);
+      background-color: map-get(map-get($content-list, marker), color);
+      color: map-get($content-text, color);
+      content: '';
+    }
   }
 }
 
@@ -51,9 +60,34 @@
 
 @media (max-width: #{$mediaSM}) {
   #{$content} {
-    padding-top: $content-block-padding-top-mobile;
-    padding-right: $content-block-padding-right-mobile;
-    padding-bottom: $content-block-padding-bottom-mobile;
-    padding-left: $content-block-padding-left-mobile;
+    padding-top: map-get(map-get($content-block-paddings, mobile), top);
+    padding-right: map-get(map-get($content-block-paddings, mobile), right);
+    padding-bottom: map-get(map-get($content-block-paddings, mobile), bottom);
+    padding-left: map-get(map-get($content-block-paddings, mobile), left);
+    
+    p {
+      padding-left: map-get(map-get($content-text, mobile), indent-left);
+      
+      strong {
+        padding-left: map-get(map-get($content-headings, mobile), indent-left)
+      }
+    }
+    
+    ol li {
+      padding-left: map-get($content-list, modile), ol-padding-left;
+      
+      &::before {
+        left: map-get(map-get(map-get($content-list, number), mobile), left);
+      }
+    }
+    
+    ul li {
+      padding-left: map-get($content-list, modile), ul-padding-left;
+      
+      &:before {
+        top: map-get(map-get(map-get($content-list, marker), mobile), top);
+        left: map-get(map-get(map-get($content-list, marker), mobile), left);
+      }
+    }
   }
 }

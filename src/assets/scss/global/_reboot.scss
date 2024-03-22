@@ -4,9 +4,9 @@
 @import '@/assets/scss/variables/content-block-vars';
 
 .tmpl-hh-wrapper {
-  box-shadow: 1px 1px 15px #000;
-  border-radius: 4px;
   box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 1px 1px 15px #000;
 }
 
 .hht-vacancydescription {
@@ -18,12 +18,12 @@
   ol {
     margin-left: 0;
   }
-
+  
   p {
-
+    
     &:first-child {
       margin-top: 0 !important;
-
+      
       b,
       strong {
         margin-top: 0 !important;
@@ -33,28 +33,28 @@
 }
 
 #{$wrapper} {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 690px;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 690px;
+  margin: 0 auto;
   font-family: 'Arial', sans-serif;
+  font-size: map-get(map-get($content-text, desktop), font-size);
+  font-weight: map-get(map-get($content-text, desktop), font-weight);
   font-style: normal;
-  font-weight: $text-font-weight;
-  font-size: $text-font-size;
-  line-height: $text-line-height;
-  color: $text-color;
-
+  line-height: map-get(map-get($content-text, desktop), line-height);
+  color: map-get($content-text, color);
+  
   @media (max-width: #{$mediaSM}) {
-    font-size: $text-font-size-mobile;
+    font-size: map-get(map-get($content-text, mobile), font-size);
   }
-
+  
   * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
   }
-
+  
   sup {
     vertical-align: top;
   }
@@ -64,117 +64,117 @@
   ol,
   ul {
     li {
-
+      
       &:not(:first-child) {
-        margin-top: $text-indent-top;
-
+        margin-top: map-get(map-get($content-text, desktop), indent-top);
+        
         @media (max-width: $mediaSM) {
-          margin-top: $text-indent-top-mobile;
+          margin-top: map-get(map-get($content-text, mobile), indent-top);
         }
       }
-
+      
       p {
         margin: 0 !important;
-
+        
         b,
         strong {
-          font-weight: 700;
-          font-size: inherit !important;
+          display: initial;
           margin: 0 !important;
+          font-size: inherit !important;
+          font-weight: 700;
           text-transform: none;
           color: inherit !important;
-          display: initial;
         }
       }
-
+      
       em {
         font-style: normal !important;
-
+        
         b,
         strong {
-          text-transform: none;
           display: inherit;
-          font-weight: 700;
           font-size: inherit;
-          color: inherit;
+          font-weight: 700;
           font-style: normal !important;
+          text-transform: none;
+          color: inherit;
         }
       }
-
+      
       b,
       strong {
-        font-weight: 700;
-        font-size: inherit !important;
         margin: 0 !important;
+        font-size: inherit !important;
+        font-weight: 700;
         text-transform: none;
         color: inherit !important;
       }
     }
   }
-
+  
   p {
-    margin-top: $text-indent-top;
-
+    margin-top: map-get(map-get($content-text, desktop), indent-top);
+    
     &:first-child {
       padding-top: 0 !important;
       margin-top: 0 !important;
-
+      
       b, strong {
         padding-top: 0 !important;
         margin-top: 0 !important;
       }
     }
-
+    
     &:last-child {
       padding-bottom: 0 !important;
       margin-bottom: 0 !important;
-
+      
       b,
       strong {
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
       }
     }
-
+    
     @media (max-width: #{$mediaSM}) {
-      margin-top: $text-indent-top-mobile;
+      margin-top: map-get(map-get($content-text, mobile), indent-top);
     }
-
+    
     b,
     strong {
       display: inline-block;
       width: 100%;
-      font-weight: $headings-font-weight;
-      font-size: $headings-font-size;
-      line-height: $headings-line-height;
-      color: $headings-color;
-      padding-top: $heading-top-indent;
-      padding-bottom: $heading-bottom-indent;
-
+      padding-top: map-get(map-get($content-headings, desktop), indent-top);
+      padding-bottom: map-get(map-get($content-headings, desktop), indent-bottom);
+      font-size: map-get(map-get($content-headings, desktop), font-size);
+      font-weight: map-get(map-get($content-headings, desktop), font-weight);
+      line-height: map-get(map-get($content-headings, desktop), line-height);
+      color: map-get($content-headings, color);
+      
       @media (max-width: #{$mediaSM}) {
-        font-size: $headings-font-size-mobile;
-        padding-top: $heading-top-indent-mobile;
-        padding-bottom: $heading-bottom-indent-mobile;
+        padding-top: map-get(map-get($content-headings, mobile), indent-top);
+        padding-bottom: map-get(map-get($content-headings, mobile), indent-bottom);
+        font-size: map-get(map-get($content-headings, mobile), font-size);
       }
     }
-
+    
     em {
       font-style: normal !important;
-
+      
       b,
       strong {
-        text-transform: none;
         display: inherit;
-        font-weight: 700;
-        font-size: inherit;
-        color: inherit !important;
-        font-style: normal !important;
-        background: transparent;
         padding: 0;
+        font-size: inherit;
+        font-weight: 700;
+        font-style: normal !important;
+        text-transform: none;
+        background: transparent;
+        color: inherit !important;
       }
     }
   }
-
+  
   .l-paddings {
     padding: 0;
   }
@@ -184,7 +184,7 @@
   #{$wrapper} {
     max-width: 610px;
   }
-
+  
 }
 
 @media (max-width: #{$mediaSM}) {
