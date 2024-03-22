@@ -4,6 +4,10 @@
   @return $headingIndentAccordingLayout - $text-indent-top
 }
 
+@function getMobileHeadingsIndent($headingIndentAccordingLayout) {
+  @return $headingIndentAccordingLayout - $text-indent-top-mobile
+}
+
 // content-block
 // desktop
 $content-block-padding-top: 70px;
@@ -42,6 +46,7 @@ $headings-font-size-mobile: 21px;
 $heading-top-indent-mobile: 35px;
 $heading-bottom-indent-mobile: 15px;
 
+$heading-top-indent-mobile: getMobileHeadingsIndent(32px); // передать сюда отступ заголовков из макета
 
 // lists
 $ol-padding-left: 20px;
