@@ -74,7 +74,7 @@
     }
     
     ol li {
-      padding-left: map-get($content-list, modile), ol-padding-left;
+      padding-left: map-get(map-get($content-list, mobile), ol-padding-left);
       
       &::before {
         left: map-get(map-get(map-get($content-list, number), mobile), left);
@@ -82,7 +82,7 @@
     }
     
     ul li {
-      padding-left: map-get($content-list, modile), ul-padding-left;
+      padding-left: map-get(map-get($content-list, mobile), ul-padding-left);
       
       &:before {
         top: map-get(map-get(map-get($content-list, marker), mobile), top);
