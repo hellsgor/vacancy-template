@@ -111,6 +111,15 @@
       }
     }
   }
+
+  ul + ol,
+  ol + ul {
+    margin-top: map-get(map-get($content-text, desktop), indent-top);
+    
+    @media (max-width: #{$mediaSM}) {
+      margin-top: map-get(map-get($content-text, mobile), indent-top);
+    }
+  }
   
   p {
     margin-top: map-get(map-get($content-text, desktop), indent-top);
